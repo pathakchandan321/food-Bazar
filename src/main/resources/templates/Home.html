@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>FoodFrenzy</title>
+    <link rel="icon" type="image/x-icon" href="./Images/logo.png">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" th:href="@{/css/Navigation.css}" />
+    <link rel="stylesheet" th:href="@{/css/Home.css}" />
+
+    <style>
+
+        body {
+            background-image: url('./Images/foodimage.png');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* LEFT SIDE TEXT */
+        .text {
+            margin-top: 120px;
+            margin-left: 60px;
+            text-shadow: 2px 2px 10px black;
+            width: 55%;
+            text-align: left;
+        }
+
+        .text h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        /* TYPEWRITER EFFECT */
+        .typing {
+            font-size: 1.4rem;
+            font-weight: 500;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid orange;
+            width: 0;
+            animation: typing 5s steps(60) forwards,
+                       blink 0.7s infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 550px; }
+        }
+
+        @keyframes blink {
+            50% { border-color: transparent; }
+        }
+
+        /* ⭐ MY ORDERS ICON RIGHT SIDE ⭐ */
+        .feature-icons {
+            display: flex;
+            justify-content: flex-end;   /* RIGHT SIDE */
+            margin-top: -70px;
+            margin-right: 400px;          /* PERFECT RIGHT SPACING */
+        }
+
+        .icon-card {
+            text-align: center;
+            text-decoration: none;
+            color: white;
+        }
+
+        .icon-card i {
+            font-size: 50px;
+            padding: 22px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.6);
+            transition: 0.3s;
+        }
+
+        .icon-card:hover i {
+            background: orange;
+            transform: scale(1.1);
+        }
+
+        .icon-card p {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* SEARCH SECTION LEFT SIDE */
+        .home-container {
+            margin-left: 60px;
+            margin-top: 50px;
+            width: 50%;
+            text-align: left;
+        }
+
+        .main-heading {
+            font-size: 45px;
+            font-weight: bold;
+        }
+
+        .sub-heading {
+            font-size: 22px;
+            margin-top: 10px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav th:replace="~{Navigation::navbar()}"></nav>
+
+<!-- Left Side Text -->
+<div class="text">
+    <h1>WELCOME TO FOOD BAZAR</h1>
+
+    <h3 class="typing">
+        Where Quality Meets Innovation! Explore our wide range of products designed to enhance your life.
+    </h3>
+</div>
+
+<!-- ⭐ My Orders Icon (RIGHT SIDE) ⭐ -->
+<div class="feature-icons">
+    <a href="/buyProduct" class="icon-card">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <p>My Orders</p>
+    </a>
+</div>
+
+<!-- Search Bar (LEFT SIDE) -->
+<div class="home-container">
+    <h1 class="main-heading">Order Food Online</h1>
+    <h3 class="sub-heading">Best restaurants at your home</h3>
+</div>
+
+</body>
+</html>
